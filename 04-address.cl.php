@@ -19,17 +19,17 @@ class Address
         $this->postcode = $postcode;
         $this->town = $town;
     }
-    public function setStreet(string $newStreet)
+    public function setStreet(string $newStreet): object
     {
         $this->street = $newStreet;
         return $this;
     }
-    public function setTown(string $newTown)
+    public function setTown(string $newTown): object
     {
         $this->town = $newTown;
         return $this;
     }
-    public function setPostcode(string $newPostcode)
+    public function setPostcode(string $newPostcode): object
     {
         $this->postcode = $newPostcode;
         return $this;
