@@ -1,57 +1,48 @@
 <?php
 
+/* Your Car one is probably a bit over-engineered.
+The user of the class can't create a Car without passing in values for make and numberplate, so the null checks on those are unnecessary.
+You also don't really need the journey property - just update mileage with the value directly.
+There's also a price property that you haven't declared, then set to null in the __construct but then never do anything with.
+*/
+
 declare(strict_types=1);
 
 class Car
 {
     private $make;
     private $numberPlate;
-    private $mileage;
-    private $journey;
+    private $mileage = 0;
 
     public function __construct(string $make, string $numberPlate)
     {
         $this->make = $make;
         $this->numberPlate = $numberPlate;
-        $this->price = null;
-        $this->mileage = null;
-        $this->journey = null;
     }
 
-    public function setMileage($value): void
+    public function addJourney(int $value): object
     {
-        $this->mileage = $value;
+        $this->mileage += $value; // Add journey to total mileage
+        return $this;
     }
 
-    public function addJourney($value): void
+    public function getMake(): string
     {
-        $this->journey = $value;
-        $this->mileage = $this->mileage + $this->journey; // Add journey to total mileage
+        return $this->make;
     }
 
-    public function getMake()
+    public function getMileage(): int
     {
-        return ($this->make === null) ? 0 : $this->make;
+        return $this->mileage;
     }
-
-    public function getMileage()
+    public function getNumberPlate(): string
     {
-        return ($this->mileage === null) ? 0 : $this->mileage;
-    }
-    public function getNumberPlate()
-    {
-        return ($this->numberPlate === null) ? "Unknown" : $this->numberPlate;
-    }
-    public function getJourney()
-    {
-        return ($this->journey === null) ? 0 : $this->journey;
+        return $this->numberPlate;
     }
 }
 
-
 // you pass in a make and number plate
 $car = new Car("Ford", "XY11 4TY");
-$car->setMileage(30000);
 
 // you can get various bits of information about it
 var_dump($car->getNumberplate()); // string(8) "XY11 4TY"
@@ -67,17 +58,3 @@ var_dump($car->getMileage()); // int(100)
 
 $car->addJourney(200);
 var_dump($car->getMileage()); // int(300)
-
-
-// A second car =================
-
-$car2 = new Car("Nissan", "W123 WER");
-$car2->setMileage(120000);
-
-var_dump($car2->getNumberplate());
-var_dump($car2->getMake());
-
-var_dump($car2->getMileage());
-
-$car2->addJourney(300);
-var_dump($car2->getMileage());
