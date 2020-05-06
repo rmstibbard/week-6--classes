@@ -1,11 +1,5 @@
 <?php
 
-/* Your Car one is probably a bit over-engineered.
-The user of the class can't create a Car without passing in values for make and numberplate, so the null checks on those are unnecessary.
-You also don't really need the journey property - just update mileage with the value directly.
-There's also a price property that you haven't declared, then set to null in the __construct but then never do anything with.
-*/
-
 declare(strict_types=1);
 
 class Car
