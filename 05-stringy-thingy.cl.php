@@ -22,9 +22,9 @@ class Stringy
         return strtoupper($this->str);
     }
 
-    public function append(): string
+    public function append($value): string
     {
-        return $this->str . "blah";
+        return $this->str . $value;
     }
 
     public function repeat(int $n): string
