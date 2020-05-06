@@ -1,8 +1,8 @@
 # Richard Stibbard - Week 6 - PHP Classes
 
-- 01-phone.cl.php
-- 02-switch.cl.php
-- 03-car-cl.php
+- 01-phone.cl.php - A class which represents a phone and can return make and model
+- 02-switch.cl.php - A class which represents a light switch, which can be turned on and off
+- 03-car-cl.php - A class which represents a car
 - 04-address.cl.php
 - 05-stringy-thingy.cl.php
 - 06-validation.cl.php
