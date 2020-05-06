@@ -18,17 +18,15 @@ class Car
         $this->journey = null;
     }
 
-    public function setMileage($value)
+    public function setMileage($value): void
     {
         $this->mileage = $value;
-        return $this->mileage;
     }
 
-    public function addJourney($value)
+    public function addJourney($value): void
     {
         $this->journey = $value;
-        $this->mileage = $this->mileage + $this->journey;
-        return $this->mileage;
+        $this->mileage = $this->mileage + $this->journey; // Add journey to total mileage
     }
 
     public function getMake()
