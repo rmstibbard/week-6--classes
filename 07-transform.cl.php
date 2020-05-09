@@ -34,7 +34,7 @@ class StringyRedux
     public function repeat(int $n): StringyRedux
     {
         $output = "";
-        for ($i = 0; $i <= $n; $i += 1) {
+        for ($i = 1; $i <= $n; $i += 1) {
             $output .=  $this->str;
         }
         $this->str = $output;

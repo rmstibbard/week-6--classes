@@ -6,9 +6,9 @@ class LightSwitch
 {
     private $on = false;
 
-    public function turnOn(): void
+    public function turnOn(): void  //Nothing to return, so type = void
     {
-        $this->on = true;  //Nothing to return, so void
+        $this->on = true;
     }
 
     public function turnOff(): void

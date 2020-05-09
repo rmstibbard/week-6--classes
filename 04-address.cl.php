@@ -1,8 +1,4 @@
 <?php
-/* Create a class that represents an address - use different properties for each part of the address. It should have a fullAddress method, which will return the full address as a nicely formatted string.
-Hint: PHP has an implode() function, which is similar to join() in JS
-
-*/
 
 declare(strict_types=1);
 
@@ -12,24 +8,23 @@ class Address
     private $postcode;
     private $town;
 
-
     public function __construct(string $street, string $postcode, string $town)
     {
         $this->street = $street;
         $this->postcode = $postcode;
         $this->town = $town;
     }
-    public function setStreet(string $newStreet): object
+    public function setStreet(string $newStreet): Address
     {
         $this->street = $newStreet;
         return $this;
     }
-    public function setTown(string $newTown): object
+    public function setTown(string $newTown): Address
     {
         $this->town = $newTown;
         return $this;
     }
-    public function setPostcode(string $newPostcode): object
+    public function setPostcode(string $newPostcode): Address
     {
         $this->postcode = $newPostcode;
         return $this;
@@ -37,7 +32,7 @@ class Address
 
     public function fullAddress()
     {
-        return $this->street . ", " . $this->postcode . " " . $this->town;
+        return $this->street . ", " . $this->postcode . ", " . $this->town;
     }
 }
 

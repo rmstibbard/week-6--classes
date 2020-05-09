@@ -8,7 +8,8 @@ class Car
     private $numberPlate;
     private $mileage = 0;
 
-    public function __construct(string $make, string $numberPlate)
+    public function __construct(string $make, string $numberPlate)  /* __construct contains values 
+                                                                        which have to be passed in as arguments */
     {
         $this->make = $make;
         $this->numberPlate = $numberPlate;
